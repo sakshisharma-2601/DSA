@@ -1,0 +1,38 @@
+code of Bubblesort:-
+
+#include<stdio.h>    
+ void print(int arr[], int t) //function to print array elements  
+    {  
+    int i;  
+    for(i = 0; i < t; i++)    
+    {    
+        printf("%d ",arr[i]);    
+    }        
+    }  
+ void bubble(int arr[], int t) // function to implement bubble sort  
+ {  
+   int i, j, temp;  
+   for(i = 0; i < t; i++)    
+    {    
+      for(j = i+1; j < t; j++)    
+        {    
+            if(arr[j] < arr[i])    
+            {    
+                temp = arr[i];    
+                arr[i] = arr[j];    
+                arr[j] = temp;     
+            }     
+        }     
+    }     
+ }  
+void main ()    
+{    
+    int i, j,temp;     
+    int arr[5] = { 22, 45, 58, 35, 24};     
+    int t = sizeof(arr)/sizeof(arr[0]);   
+    printf("\nBefore sorting \n");  
+    print(arr, t);  
+    bubble(arr, t);  
+    printf("\nAfter sorting \n");    
+    print(arr, t);  
+} 
