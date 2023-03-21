@@ -1,7 +1,7 @@
 code of Bubblesort:-
 
 #include<stdio.h>    
- void print(int arr[], int t) //function to print array elements  
+ void print(int arr[], int t) 
     {  
     int i;  
     for(i = 0; i < t; i++)    
@@ -9,7 +9,7 @@ code of Bubblesort:-
         printf("%d ",arr[i]);    
     }        
     }  
- void bubble(int arr[], int t) // function to implement bubble sort  
+ void bubble(int arr[], int t) 
  {  
    int i, j, temp;  
    for(i = 0; i < t; i++)    
