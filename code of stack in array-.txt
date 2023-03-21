@@ -1,0 +1,83 @@
+code of stack in array:-
+
+#include<stdio.h>
+int stack[100],i,j,choice=0,n,top=-1;
+void push();
+void pop();
+void show();
+void main()
+{
+	printf("enter the number of elements of stack");
+	scanf("%d",&n);
+	printf("*******operations of stack using array*******");
+	printf("\n------------\n");
+	while(choice!=4)
+	{
+		printf("choose one from the below options");
+		printf("\n1push\n2pop\n3show\n4exit");
+		printf("enter your choice");
+		scanf("%d",&choice);
+		switch(choice)
+{
+	case1:
+	{
+		push();
+		break;
+	}
+	case2:
+	{
+		pop();
+		break;
+	}
+	case3:
+	{
+		show();
+		break;
+	}
+	case4:
+	{
+		printf("exiting.........");
+	}
+	default:
+	{
+		printf("please enter valid choice");
+	}
+	};
+		}
+}
+void push()
+{
+	int val;
+	if(top==n)
+	printf("overflow");
+	else
+	{
+		printf("enter the value");
+		scanf("%d",&val);
+		top=top+1;
+		stack[top]=val;
+		
+		
+	}
+}
+void pop()
+{
+	if(top==-1)
+	printf("underflow");
+	else
+	{
+		top=top-1;
+	}
+}
+void show()
+{
+	for(i=top;i>=0;i--)
+	{
+		printf("%d",stack[i]);
+	}
+	if(top==-1)
+	{
+		printf("stack is empty");
+	}
+		}
+	
