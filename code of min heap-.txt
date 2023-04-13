@@ -1,0 +1,52 @@
+//code of min heap:-
+
+#include <iostream>
+using namespace std;
+void minheap(int arr[],int n,int i)
+{
+    int smallest=i;
+    int left=2*i + 1;
+    int right=2*i + 2;
+    
+    if(left<n && arr[left] < arr[smallest])
+    smallest = left;
+    
+     if(right<n && arr[right]<arr[smallest])
+    smallest=right;
+    
+    if(smallest !=i)
+    {
+        swap(arr[i],arr[smallest]);
+        minheap(arr,n,smallest);
+    }
+    
+    
+}
+void buildarray(int arr[],int n)
+{
+   int startidx=(n/2) -1;
+    for(int i=startidx;i>=0;i--)
+    {
+        minheap(arr,n,i);
+    }
+}
+void printarray(int arr[],int n)
+{
+    cout<<"array representation in minheap is: "<<endl;
+    for(int i=0;i<n;++i)
+    {
+        cout<<arr[i]<<" ";
+        }
+        cout<<endl;
+        
+    
+}
+int main()
+{
+    int arr[]= {8,10,25,45,23,11,48,2,1};
+    int n = sizeof (arr)/sizeof arr[0];
+    buildarray(arr,n);
+    printarray(arr,n);
+    return 0;
+}
+
